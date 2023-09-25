@@ -2,7 +2,7 @@ Olá esse é o meu codigo para o teste da Aquidev e vou mostrar o passo a passo 
 
 1- Eu dei o fork do repositorio e em seguida o clonei na minha maquina <br>
 2- Ai eu dei o comando do laravel pra criar o projeto e com isso criei o Aquidevtest atraves desse comando -> composer create-project laravel/laravel Aquidevteste <br>
-3- Instalei o Composer <br>
+3- Instalei o Composer
 4- Antes de tudo fui no arquivo .env e nomeei o DB_DATABASE com um nome de minha preferencia e criei no Mysql um banco com nome identico <br>
 5- entrei na pasta e em seguida criei a migration onde cria-se a tabela pra registrar no banco de dados onde cria o schmea e os dados que voce quer nela <br>
 6-Como boa pratica é sempre bom criar a tabela no plural pra criar a model no singular o que veremos mais a frente <br>
