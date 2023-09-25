@@ -1,6 +1,6 @@
 Olá esse é o meu codigo para o teste da Aquidev e vou mostrar o passo a passo pra voces logo Abaixo.
 
-1- Eu dei o fork do repositorio e em seguida o clonei na minha maquina </br>
+1- Eu dei o fork do repositorio e em seguida o clonei na minha maquina <br>
 2- Ai eu dei o comando do laravel pra criar o projeto e com isso criei o Aquidevtest atraves desse comando -> composer create-project laravel/laravel Aquidevteste
 3- Instalei o Composer
 4- Antes de tudo fui no arquivo .env e nomeei o DB_DATABASE com um nome de minha preferencia e criei no Mysql um banco com nome identico
