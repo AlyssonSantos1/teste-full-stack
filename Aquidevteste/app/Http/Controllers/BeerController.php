@@ -53,10 +53,9 @@ class BeerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Request $id)
+    public function edit(Request $request)
     {
-        $beer = Cerveja::findorfail($id);
-        dd($beer);
+        $beer = Cerveja::findorfail($request->id);
         return view('editarcerveja', ['cerveja'=>$beer]);
 
     }
