@@ -19,17 +19,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BeerController::class, 'index']);
 Route::get('/cadastro-cervejas', [BeerController::class, 'create']);
-Route::post('/cadastro-cervejas', [BeerController::class, 'store'])->name('cadastro-cervejas');
+Route::post('/cadastro-cervejas', [BeerController::class, 'store'])->name('/cadastro-cervejas');
 Route::get('/mostrar-cervejas/{id}', [BeerController::class, 'show']);
-Route::get('/editar-cervejas/{id}', [BeerController::class, 'edit']);
-Route::put('/atualizar-cervejas/{id}',[BeerController::class, 'update'])->name('/atualizar-cervejas/{id}');
+Route::get('/editar-cervejas', [BeerController::class, 'edit']);
+Route::put('/atualizar-cervejas',[BeerController::class, 'update'])->name('/atualizar-cervejas');
+Route::get('/excluir-cervejas/{id_da_cerveja}',[BeerController::class, 'destroy']);
 
-Route::get('/excluir-cervejas/{id_da_cerveja}', function ($id_cerveja){
-    $Cerveja = Cerveja::findorfail($id_cerveja);
-    $Cerveja->delete();
-
-    echo "Cerveja excluida do Cadastro!";
-});
 
 Route::get('/exibir-cervejas', function (Request $informacao) {
     $Cerveja = Cerveja::select('nome', 'tipo','teoralcolico', 'preco', 'quantidade')->get();

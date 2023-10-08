@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Editando Cadastro Cerveja</title>
+    <title>Editar Cerveja</title>
 </head>
 <body>
-    <form action="atualizar-cervejas/{id}" method="POST">
-    @csrf
-    @method('PUT')
     <label for="">Nome da Cerveja</label>
     <input type="text" placeholder="Nome da Cerveja" name="nome_cerveja" value="{{$cerveja->nome}}">
     <br><br>
@@ -26,6 +23,5 @@
     <input type="text" placeholder="Quantidade em Estoque" name="estoque_cerveja" value="{{$cerveja->quantidade}}">
     <br><br>
     <button>Enviar</button>
-    </form>
 </body>
 </html>

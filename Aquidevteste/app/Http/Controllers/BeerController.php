@@ -53,21 +53,22 @@ class BeerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Request $id)
     {
-
-
         $beer = Cerveja::findorfail($id);
+        dd($beer);
         return view('editarcerveja', ['cerveja'=>$beer]);
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $informacao, string $id)
+    public function update(Request $informacao)
 
     {
-        $cerveja = Cerveja::findorfail($id);
+
+        $cerveja = Cerveja::findorfail($informacao->id);
         $cerveja->nome = $informacao->nome_cerveja;
         $cerveja->tipo = $informacao->tipo_cerveja;
         $cerveja->teoralcolico = $informacao->teor_cerveja;
@@ -83,6 +84,8 @@ class BeerController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $Cerveja = Cerveja::findorfail($id);
+        $Cerveja->delete();
+        echo "Cerveja excluida do Cadastro!";
     }
 }
