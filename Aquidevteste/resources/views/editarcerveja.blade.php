@@ -7,7 +7,7 @@
     <title>Editar Cerveja</title>
 </head>
 <body>
-    <form action="{{route('/atualizar-cervejas')}}" method="POST">
+    <form action="{{route('atualizar-cervejas')}}" method="POST">
     @csrf
     @method('PUT')
     <input type="hidden" id="id" name="id" value="{{$cerveja->id}}">
