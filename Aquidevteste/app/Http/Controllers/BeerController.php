@@ -7,25 +7,19 @@ use Illuminate\Http\Request;
 
 class BeerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         return view('welcome');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         return view('createbeer');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $dados)
     {
         Cerveja::create([
@@ -40,9 +34,7 @@ class BeerController extends Controller
         echo "Cerveja criada com sucesso!";
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(string $id)
     {
         $beer = Cerveja::findorfail($id);
@@ -50,9 +42,7 @@ class BeerController extends Controller
 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(Request $request)
     {
         $beer = Cerveja::findorfail($request->id);
@@ -60,9 +50,7 @@ class BeerController extends Controller
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $informacao)
 
     {
@@ -78,15 +66,14 @@ class BeerController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(string $id)
     {
         $Cerveja = Cerveja::findorfail($id);
         $Cerveja->delete();
         echo "Cerveja excluida do Cadastro!";
     }
+
 
     public function list(Request $informacao)
     {
@@ -101,5 +88,5 @@ class BeerController extends Controller
             echo "<br>";
         }
         echo "Listagem completa das Cervejas no Cadastro! ;)";
-        }
+    }
 }
