@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BeerController::class, 'index']);
 Route::get('/cadastro-cervejas', [BeerController::class, 'create']);
-Route::post('/cadastro-cervejas', [BeerController::class, 'store'])->name('/cadastro-cervejas');
+Route::post('/cadastro-cervejas', [BeerController::class, 'store'])->name('cadastro-cervejas');
 Route::get('/mostrar-cervejas/{id}', [BeerController::class, 'show']);
 Route::get('/editar-cervejas/{id}', [BeerController::class, 'edit']);
 Route::put('/atualizar-cervejas',[BeerController::class, 'update'])->name('/atualizar-cervejas');
