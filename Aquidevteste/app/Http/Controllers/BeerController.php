@@ -87,4 +87,19 @@ class BeerController extends Controller
         $Cerveja->delete();
         echo "Cerveja excluida do Cadastro!";
     }
+
+    public function list(Request $informacao)
+    {
+        $Cerveja = Cerveja::select('nome', 'tipo','teoralcolico', 'preco', 'quantidade')->get();
+
+        foreach ($Cerveja as $Cerveja) {
+            echo "Nome: " . $Cerveja->nome . "<br>";
+            echo "cpf: " . $Cerveja->tipo . "<br>";
+            echo "data: " . $Cerveja->teoralcolico . "<br>";
+            echo "sexo: " . $Cerveja->preco . "<br>";
+            echo "cidade: " . $Cerveja->quantidade . "<br>";
+            echo "<br>";
+        }
+        echo "Listagem completa das Cervejas no Cadastro! ;)";
+        }
 }

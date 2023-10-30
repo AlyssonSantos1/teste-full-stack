@@ -24,21 +24,22 @@ Route::get('/mostrar-cervejas/{id}', [BeerController::class, 'show']);
 Route::get('/editar-cervejas/{id}', [BeerController::class, 'edit']);
 Route::put('/atualizar-cervejas',[BeerController::class, 'update'])->name('/atualizar-cervejas');
 Route::get('/excluir-cervejas/{id}',[BeerController::class, 'destroy']);
+Route::get('/listar-cervejas', [BeerController::class, 'list']);
 
 
-Route::get('/exibir-cervejas', function (Request $informacao) {
-    $Cerveja = Cerveja::select('nome', 'tipo','teoralcolico', 'preco', 'quantidade')->get();
+// Route::get('/exibir-cervejas', function (Request $informacao) {
+//     $Cerveja = Cerveja::select('nome', 'tipo','teoralcolico', 'preco', 'quantidade')->get();
 
-    foreach ($Cerveja as $Cerveja) {
-        echo "Nome: " . $Cerveja->nome . "<br>";
-        echo "cpf: " . $Cerveja->tipo . "<br>";
-        echo "data: " . $Cerveja->teoralcolico . "<br>";
-        echo "sexo: " . $Cerveja->preco . "<br>";
-        echo "cidade: " . $Cerveja->quantidade . "<br>";
-        echo "<br>";
-    }
-    echo "Listagem completa das Cervejas no Cadastro! ;)";
-});
+//     foreach ($Cerveja as $Cerveja) {
+//         echo "Nome: " . $Cerveja->nome . "<br>";
+//         echo "cpf: " . $Cerveja->tipo . "<br>";
+//         echo "data: " . $Cerveja->teoralcolico . "<br>";
+//         echo "sexo: " . $Cerveja->preco . "<br>";
+//         echo "cidade: " . $Cerveja->quantidade . "<br>";
+//         echo "<br>";
+//     }
+//     echo "Listagem completa das Cervejas no Cadastro! ;)";
+// });
 
 
 
