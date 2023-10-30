@@ -80,11 +80,11 @@ class BeerController extends Controller
         $Cerveja = Cerveja::select('nome', 'tipo','teoralcolico', 'preco', 'quantidade')->get();
 
         foreach ($Cerveja as $Cerveja) {
-            echo "Nome: " . $Cerveja->nome . "<br>";
-            echo "cpf: " . $Cerveja->tipo . "<br>";
-            echo "data: " . $Cerveja->teoralcolico . "<br>";
-            echo "sexo: " . $Cerveja->preco . "<br>";
-            echo "cidade: " . $Cerveja->quantidade . "<br>";
+            echo "nome: " . $Cerveja->nome . "<br>";
+            echo "tipo: " . $Cerveja->tipo . "<br>";
+            echo "teoralcolico: " . $Cerveja->teoralcolico . "<br>";
+            echo "preco: " . $Cerveja->preco . "<br>";
+            echo "quantidade: " . $Cerveja->quantidade . "<br>";
             echo "<br>";
         }
         echo "Listagem completa das Cervejas no Cadastro! ;)";
