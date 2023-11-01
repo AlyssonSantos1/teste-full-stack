@@ -19,17 +19,14 @@ class BeerController extends Controller
         return view('createbeer');
     }
 
-
     public function store(Request $dados)
     {
         Cerveja::create([
-            'nome' => $dados->nome_cerveja,
-            'tipo' => $dados->tipo_cerveja,
-            'teoralcolico' => $dados->teor_cerveja,
-            'preco' => $dados->preco_cerveja,
-            'quantidade' => $dados->estoque_cerveja,
-
-
+        'nome' => $dados->nome_cerveja,
+        'tipo' => $dados->tipo_cerveja,
+        'teoralcolico' => $dados->teor_cerveja,
+        'preco' => $dados->preco_cerveja,
+        'quantidade' => $dados->estoque_cerveja,
         ]);
         echo "Cerveja criada com sucesso!";
     }
@@ -39,7 +36,6 @@ class BeerController extends Controller
     {
         $beer = Cerveja::findorfail($id);
         return view('showbeer', ['cerveja'=>$beer]);
-
     }
 
 
@@ -47,14 +43,12 @@ class BeerController extends Controller
     {
         $beer = Cerveja::findorfail($request->id);
         return view('editarcerveja', ['cerveja'=>$beer]);
-
     }
 
 
     public function update(Request $informacao)
 
     {
-
         $cerveja = Cerveja::findorfail($informacao->id);
         $cerveja->nome = $informacao->nome_cerveja;
         $cerveja->tipo = $informacao->tipo_cerveja;
@@ -63,7 +57,6 @@ class BeerController extends Controller
         $cerveja->quantidade = $informacao->estoque_cerveja;
         $cerveja->save();
         echo "Cerveja atualizada com sucesso!";
-
     }
 
 
@@ -77,7 +70,7 @@ class BeerController extends Controller
 
     public function list(Request $informacao)
     {
-        $Cerveja = Cerveja::select('nome', 'tipo','teoralcolico', 'preco', 'quantidade')->get();
+        $Cerveja = Cerveja::select('nome', 'tipo', 'teoralcolico','preco', 'quantidade')->get();
 
         foreach ($Cerveja as $Cerveja) {
             echo "nome: " . $Cerveja->nome . "<br>";
@@ -86,7 +79,9 @@ class BeerController extends Controller
             echo "preco: " . $Cerveja->preco . "<br>";
             echo "quantidade: " . $Cerveja->quantidade . "<br>";
             echo "<br>";
+
         }
-        echo "Listagem completa das Cervejas no Cadastro! ;)";
+        echo "Listagem completa das Cervejas;)";
     }
+
 }

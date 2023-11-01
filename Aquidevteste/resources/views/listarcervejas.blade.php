@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Listagem de Cervejas</title>
 </head>
-<body>
+    <body>
     <label for="">Nome da Cerveja</label>
     <input type="text" disabled placeholder="Nome da Cerveja" name="nome_cerveja" value="{{$cerveja->nome}}">
     <br><br>
@@ -22,5 +22,6 @@
     <label for="">Quantidade em Estoque</label>
     <input type="text" disabled placeholder="Quantidade em Estoque" name="estoque_cerveja" value="{{$cerveja->quantidade}}">
     <br><br>
-</body>
+    </body>
+
 </html>
